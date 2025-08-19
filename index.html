@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Técnico de Refrigeración - GSTec</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="container">
+<div class="header-content">
+<img src="Imagen/Logo Oficial nuevo.jpeg" alt="Logo de la empresa" class="logo">
+<h1>GSTec</h1>
+<p>Técnico Especializado en Refrigeración</p>
+</div>
+
+<button class="menu-toggle" aria-label="Abrir menú de navegación">
+&#9776;
+</button>
+
+<nav>
+<ul class="nav-menu">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="container">
+<section id="inicio">
+<div id="hero">
+<h2>Soluciones Profesionales </h2>
+<p>Ofrecemos servicio técnico refrigeración, climatización y electricidad industrial <br>¡Contáctanos para un presupuesto sin cargo!</p>
+</div>
+</section>
+
+<section id="servicios">
+<h2 style="text-align: center;">Nuestros Servicios</h2>
+<div class="services-grid">
+<!-- <a href="aire-acondicionado.html" class="service-link"> -->
+<div class="service-box aire-acondicionado">
+<h3>Aire Acondicionado</h3>
+<p>Climatización: instalacion reparación y mantenimiento de equipos tipo Split, on off, Inverter, piso techo, sistemas centrales multi Split  vrf.</p>
+</div>
+</a>
+
+<!-- <a href="camaras-de-frio.html" class="service-link"> -->
+<div class="service-box camaras-de-frio">
+<h3>Cámaras de Frío, Heladeras y Freezers</h3>
+<p>Servicio de refrigeración: diagnóstico reparación y mantenimiento de cámaras frigoríficas, heladeras comerciales y Freezers</p>
+</div>
+</a>
+
+<!-- <a href="heladerascomerciales.html" class="service-link"> -->
+<div class="service-box freezers">
+<h3>Electricidad Industrial</h3>
+<p>Electricidad industrial: montaje e instalación de circuitos eléctricos, armado de tableros de potencia, automatizaciones, reparación y mantenimiento eléctrico.</p>
+</div>
+</a>
+</div>
+</section>
+
+<section id="contacto">
+<h2 style="text-align: center;">Contacto</h2>
+<div class="contact-info">
+<p>📞 <strong>Teléfono:</strong> 011 2494-4735</p>
+<p>✉️ <strong>Email:</strong> gstec.refrigeracion@gmail</p>
+<p>📍 <strong>Zona de Cobertura:</strong> CABA y GBA</p>
+
+<div class="social-buttons-container">
+<a href="https://wa.me/+5491124944735?text=Hola%20estoy%20interesado%20en%20sus%20servicios%20de%20refrigeración." class="social-button" target="_blank">
+<img src="Imagen/WhatsApp_icon.png" alt="WhatsApp">
+</a>
+<a href="https://www.instagram.com/gusti_tec/" class="social-button" target="_blank">
+<img src="Imagen/Logo Instagram.jpg" alt="Instagram">
+</a>
+<a href="https://www.facebook.com/profile.php?id=61575362645364&ref=pl_edit_xav_ig_profile_page_web" class="social-button" target="_blank">
+<img src="Imagen/Logo de facebook.avif" alt="Facebook">
+</a>
+</div>
+</div>
+</section>
+
+<section id="metodos-pago">
+<h2 style="text-align: center;">Medios de Pago</h2>
+<div class="metodos-pago-container">
+<img src="Imagen/Visa.jpg" alt="Logo Visa">
+<img src="Imagen/Mastercard.jpg" alt="Logo Mastercard">
+<img src="Imagen/Mercado Pago.png" alt="Logo Mercado Pago">
+<img src="Imagen/Pago efectivo.jpg" alt="Logo Efectivo">
+</div>
+</section>
+</div>
+</main>
+
+<footer>
+<div class="container">
+<p>&copy; 2025 GSTec. Todos los derechos reservados.</p>
+</div>
+</footer>
+
+<a href="https://wa.me/+5491124944735?text=Hola%20estoy%20interesado%20en%20sus%20servicios%20de%20refrigeración." class="whatsapp-flotante" target="_blank">
+<img src="Imagen/WhatsApp_icon.png" alt="WhatsApp Flotante">
+</a>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+menuToggle.addEventListener('click', () => {
+navMenu.classList.toggle('active');
+});
+}
+</script>
+</body>
+</html>

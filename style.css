@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: #004d99;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: #004d99;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.logo {
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+header p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.menu-toggle {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 77, 153, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 1rem;
+    list-style-type: none;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección Hero */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Imagen/Fondo\ de\ Portada.jpeg') no-repeat center center/cover;
+    text-align: center;
+    padding: 8rem 0;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: #fff; /* Asegura que el texto sea blanco y se lea bien */
+}
+
+#hero h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Sección Servicios */
+#servicios {
+    padding: 2rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Estilos base para todas las cajas de servicio */
+.service-box {
+    background-color: #fff; /* Fondo de respaldo */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    height: 300px; /* Tamaño fijo para que las imágenes se vean bien */
+    position: relative;
+    overflow: hidden;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.service-box h3,
+.service-box p {
+    position: relative;
+    z-index: 2; /* Para que el texto siempre esté visible */
+    color: #fff; /* Color de texto blanco para que resalte */
+}
+
+/* Estilos para el fondo de cada servicio */
+.aire-acondicionado {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagen/Aire.jpg') no-repeat center center/cover;
+}
+
+.aire-acondicionado:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('Imagen/Aire.jpg') no-repeat center center/cover;
+}
+
+.camaras-de-frio {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagen/Fondo\ de\ camara\ y\ frezeers.jpeg') no-repeat center center/cover;
+}
+
+.camaras-de-frio:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('Imagen/Fondo\ de\ camara\ y\ frezeers.jpeg') no-repeat center center/cover;
+}
+
+.freezers {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagen/Fondo\ de\ electricidad.jpeg') no-repeat center center/cover;
+}
+
+.freezers:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('Imagen/Fondo\ de\ electricidad.jpeg') no-repeat center center/cover;
+}
+
+.service-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sección Contacto */
+#contacto {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact-info {
+    background-color: #004d99;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+/* Contenedor para alinear los botones de redes sociales */
+.social-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social-button:hover {
+    transform: scale(1.1);
+}
+
+.social-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sección Medios de Pago */
+#metodos-pago {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+#metodos-pago h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.metodos-pago-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.metodos-pago-container img {
+    height: 40px;
+    max-width: 100px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    border-radius: 20%;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #004d99;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Botón de WhatsApp Flotante */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-flotante img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    header .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        z-index: 1001;
+    }
+    
+    header p {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 77, 153, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+        display: block;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem;
+        background-color: rgba(0,0,0,0.1);
+        color: #fff;
+    }
+}
