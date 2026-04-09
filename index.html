@@ -1,131 +1,993 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17625486795"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17625486795');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Técnico de Refrigeración - GSTec</title>
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="GSTec Refrigeración - Instalación, reparación y mantenimiento de aires acondicionados, heladeras y más. Más de 10 años de experiencia. Zona Sur, Oeste, CABA y Norte.">
+<title>GSTec Refrigeración | Técnico Oficial · Zona Sur, Oeste y CABA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #0a0a0a;
+    --dark:    #111418;
+    --dark2:   #1a1f26;
+    --dark3:   #242b35;
+    --blue:    #1a6fdb;
+    --blue2:   #1559b3;
+    --blue3:   #0d3d80;
+    --cyan:    #00d4ff;
+    --white:   #ffffff;
+    --gray1:   #f0f2f5;
+    --gray2:   #c8cdd6;
+    --gray3:   #8a919e;
+    --wa:      #25D366;
+    --wa2:     #1da851;
+    --radius:  10px;
+    --font-h:  'Barlow Condensed', sans-serif;
+    --font-b:  'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-b);
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    background: var(--black);
+    color: var(--gray2);
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 16px;
+    letter-spacing: 0.03em;
+  }
+  .topbar strong { color: var(--cyan); }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+    border-bottom: 2px solid var(--blue);
+  }
+  .logo {
+    font-family: var(--font-h);
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--cyan); }
+  .nav-cta {
+    background: var(--wa);
+    color: var(--white);
+    font-family: var(--font-b);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: background .2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--wa2); }
+  .nav-cta svg { flex-shrink: 0; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--dark);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    padding: 64px 24px 72px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -20%;
+    width: 140%;
+    height: 160%;
+    background: radial-gradient(ellipse at 60% 30%, rgba(26,111,219,.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,255,.1);
+    border: 1px solid rgba(0,212,255,.3);
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--font-h);
+    font-weight: 800;
+    font-size: clamp(40px, 10vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--cyan); }
+  .hero-sub {
+    font-size: clamp(16px, 4vw, 20px);
+    color: var(--gray2);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.5;
+  }
+  .btn-wa-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--wa);
+    color: var(--white);
+    font-family: var(--font-b);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform .15s, background .2s;
+    box-shadow: 0 6px 24px rgba(37,211,102,.25);
+  }
+  .btn-wa-hero:hover { background: var(--wa2); transform: translateY(-2px); }
+
+  /* IMAGE PLACEHOLDER */
+  .img-placeholder {
+    background: var(--dark3);
+    border: 2px dashed rgba(0,212,255,.25);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--gray3);
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+  }
+  .img-placeholder span { font-weight: 600; color: var(--gray2); font-size: 13px; }
+
+  /* ─── URGENCIA STRIP ─── */
+  .urgencia-strip {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 14px 24px;
+    font-family: var(--font-h);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .urgencia-strip a {
+    color: var(--cyan);
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  /* ─── STATS ─── */
+  .stats {
+    background: var(--dark);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 2px solid var(--blue3);
+  }
+  @media(min-width:600px){ .stats { grid-template-columns: repeat(4,1fr); } }
+  .stat {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--font-h);
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--cyan);
+    line-height: 1;
+  }
+  .stat-label { font-size: 14px; color: var(--gray2); margin-top: 4px; }
+
+  /* ─── SECTIONS BASE ─── */
+  section { padding: 64px 24px; }
+  .section-label {
+    font-family: var(--font-h);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-h);
+    font-weight: 800;
+    font-size: clamp(28px, 7vw, 46px);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .section-sub { font-size: 16px; color: var(--gray3); margin-bottom: 40px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ─── SERVICIOS ─── */
+  .servicios { background: var(--gray1); }
+  .servicios .section-title { color: var(--dark); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media(min-width:700px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
+  @media(min-width:1000px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: var(--radius);
+    padding: 22px 18px;
+    transition: box-shadow .2s, transform .15s;
+  }
+  .service-card:hover { box-shadow: 0 6px 24px rgba(26,111,219,.13); transform: translateY(-3px); }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(26,111,219,.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--blue);
+  }
+  .service-card h3 {
+    font-family: var(--font-h);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .service-card p { font-size: 13px; color: var(--gray3); line-height: 1.5; }
+
+  /* SERVICIOS CTA */
+  .servicios-cta {
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  /* ─── CONFIANZA ─── */
+  .confianza { background: var(--dark); color: var(--white); }
+  .confianza .section-title { color: var(--white); }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media(min-width:700px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+  .trust-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .trust-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .trust-card h3 {
+    font-family: var(--font-h);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 6px;
+  }
+  .trust-card p { font-size: 14px; color: var(--gray2); line-height: 1.5; }
+
+  /* ─── GALERÍA ─── */
+  .galeria { background: var(--white); }
+  .galeria .section-title { color: var(--dark); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media(min-width:700px){ .gallery-grid { grid-template-columns: repeat(3,1fr); } }
+  .gallery-item { border-radius: var(--radius); overflow: hidden; }
+  .gallery-item .img-placeholder { height: 200px; }
+
+  /* ─── ZONAS ─── */
+  .zonas { background: var(--dark2); color: var(--white); }
+  .zonas .section-title { color: var(--white); }
+  .zonas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media(min-width:700px){ .zonas-grid { grid-template-columns: repeat(4,1fr); } }
+  .zona-card {
+    background: var(--dark3);
+    border: 1px solid rgba(0,212,255,.12);
+    border-top: 3px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+  }
+  .zona-card h4 {
+    font-family: var(--font-h);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .zona-card ul { list-style: none; }
+  .zona-card li {
+    font-size: 14px;
+    color: var(--gray2);
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .zona-card li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ─── CTA FINAL ─── */
+  .cta-final {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 72px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(26,111,219,.22) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cta-final h2 {
+    font-family: var(--font-h);
+    font-size: clamp(30px, 8vw, 56px);
+    font-weight: 800;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .cta-final h2 span { color: var(--cyan); }
+  .cta-final p {
+    font-size: 17px;
+    color: var(--gray2);
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .btn-wa-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--wa);
+    color: var(--white);
+    font-family: var(--font-b);
+    font-weight: 700;
+    font-size: 19px;
+    padding: 18px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    box-shadow: 0 8px 30px rgba(37,211,102,.3);
+    position: relative;
+  }
+  .btn-wa-big:hover { background: var(--wa2); transform: translateY(-2px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    color: var(--gray3);
+    padding: 40px 24px 24px;
+    font-size: 14px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media(min-width:600px){ .footer-inner { grid-template-columns: 1fr 1fr; } }
+  .footer-brand .logo { font-size: 22px; display: block; margin-bottom: 8px; }
+  .footer-brand p { line-height: 1.6; }
+  .footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray2);
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .footer-contact a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.06);
+    margin-top: 28px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray3);
+  }
+
+  /* ─── BOTÓN FLOTANTE WA ─── */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .wa-float-bubble {
+    background: var(--dark);
+    color: var(--gray2);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.1);
+    white-space: nowrap;
+    animation: fadeIn .4s ease;
+  }
+  .wa-float-btn {
+    width: 58px;
+    height: 58px;
+    background: var(--wa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,.4);
+    animation: pulse 2.5s infinite;
+    transition: transform .15s;
+  }
+  .wa-float-btn:hover { transform: scale(1.08); }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+    50%      { box-shadow: 0 4px 30px rgba(37,211,102,.65); }
+  }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+  /* ─── SHARED BUTTON ─── */
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--wa);
+    color: var(--white);
+    font-family: var(--font-b);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+  }
+  .btn-wa:hover { background: var(--wa2); transform: translateY(-1px); }
+
+  /* ─── HERO GALLERY ─── */
+  .hero-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 900px;
+    margin: 48px auto 0;
+  }
+  .hero-gallery .img-placeholder { height: 140px; border-radius: 8px; }
+  @media(max-width:500px){
+    .hero-gallery { grid-template-columns: 1fr 1fr; }
+    .hero-gallery .img-placeholder:last-child { display: none; }
+  }
+
+  /* ─── PROCESS STRIP ─── */
+  .process {
+    background: var(--blue3);
+    color: var(--white);
+    padding: 32px 24px;
+  }
+  .process-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+  .process-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+  }
+  .process-num {
+    width: 30px;
+    height: 30px;
+    background: var(--cyan);
+    color: var(--dark);
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .process-step span { font-size: 15px; font-weight: 600; }
+  .process-arrow {
+    color: rgba(255,255,255,.3);
+    font-size: 20px;
+    padding: 0 4px;
+    align-self: center;
+  }
+
+  /* ─── URGENCIA CARD ─── */
+  .urgencia-card {
+    background: rgba(255, 80, 50, .08);
+    border: 1px solid rgba(255,100,60,.25);
+    border-left: 4px solid #ff5032;
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .urgencia-card .urg-icon { font-size: 28px; flex-shrink: 0; }
+  .urgencia-card p { font-size: 15px; color: var(--dark); line-height: 1.5; }
+  .urgencia-card strong { color: #c0392b; }
+
+  @media(min-width:700px){
+    .confianza .section-title { margin-bottom: 36px; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-<div class="container">
-<div class="header-content">
-<img src="Imagen/Logo Oficial nuevo.jpeg" alt="Logo de la empresa" class="logo">
-<h1>GSTec</h1>
-<p>Técnico Especializado en Refrigeración</p>
+<!-- TOP BAR -->
+<div class="topbar">
+  📍 Atendemos en <strong>Zona Sur · Zona Oeste · CABA · Zona Norte</strong> — Urgencias disponibles todos los días
 </div>
 
-<button class="menu-toggle" aria-label="Abrir menú de navegación">
-&#9776;
-</button>
-
+<!-- NAV -->
 <nav>
-<ul class="nav-menu">
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
+  <a href="#" class="logo">GS<span>Tec</span></a>
+  <a href="https://wa.me/5491124944735?text=Hola!%20Necesito%20un%20servicio%20t%C3%A9cnico." class="nav-cta" target="_blank" rel="noopener">
+    <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escribinos ahora
+  </a>
 </nav>
-</div>
-</header>
 
-<main>
-<div class="container">
-<section id="inicio">
-<div id="hero">
-<h2>Soluciones Profesionales </h2>
-<p>Ofrecemos servicio técnico refrigeración, climatización y electricidad industrial <br>¡Contáctanos para un presupuesto sin cargo!</p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--cyan)"><circle cx="5" cy="5" r="5"/></svg>
+    Técnicos en tu zona · Mismo día
+  </div>
+  <h1>Tu <span>técnico</span><br>de confianza</h1>
+  <p class="hero-sub">Instalación, reparación y mantenimiento de aires, heladeras, lavarropas y electricidad. +10 años de experiencia.</p>
+  <a href="https://wa.me/5491124944735?text=Hola!%20Necesito%20un%20servicio%20t%C3%A9cnico." class="btn-wa-hero" target="_blank" rel="noopener">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Solicitar servicio ahora
+  </a>
+
+  <!-- HERO GALLERY — 📸 COLOCAR AQUÍ FOTOS REALES -->
+  <div class="hero-gallery">
+    <!-- FOTO 1: Técnico trabajando en instalación -->
+    <div class="img-placeholder">
+      <svg width="28" height="28" fill="none" stroke="rgba(0,212,255,.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>📸 Técnico trabajando</span>
+    </div>
+    <!-- FOTO 2: Instalación terminada -->
+    <div class="img-placeholder">
+      <svg width="28" height="28" fill="none" stroke="rgba(0,212,255,.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>📸 Instalación terminada</span>
+    </div>
+    <!-- FOTO 3: Unidad exterior prolija -->
+    <div class="img-placeholder">
+      <svg width="28" height="28" fill="none" stroke="rgba(0,212,255,.4)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+      <span>📸 Unidad exterior</span>
+    </div>
+  </div>
 </section>
 
-<section id="servicios">
-<h2 style="text-align: center;">Nuestros Servicios</h2>
-<div class="services-grid">
-<!-- <a href="aire-acondicionado.html" class="service-link"> -->
-<div class="service-box aire-acondicionado">
-<h3>Aire Acondicionado</h3>
-<p>Climatización: instalacion reparación y mantenimiento de equipos tipo Split, on off, Inverter, piso techo, sistemas centrales multi Split  vrf.</p>
+<!-- PROCESS -->
+<div class="process">
+  <div class="process-inner">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <span>Nos escribís</span>
+    </div>
+    <div class="process-arrow">›</div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <span>Confirmamos turno</span>
+    </div>
+    <div class="process-arrow">›</div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <span>Vamos el mismo día</span>
+    </div>
+    <div class="process-arrow">›</div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <span>Trabajo garantizado</span>
+    </div>
+  </div>
 </div>
-</a>
 
-<!-- <a href="camaras-de-frio.html" class="service-link"> -->
-<div class="service-box camaras-de-frio">
-<h3>Cámaras de Frío, Heladeras y Freezers</h3>
-<p>Servicio de refrigeración: diagnóstico reparación y mantenimiento de cámaras frigoríficas, heladeras comerciales y Freezers</p>
+<!-- URGENCIA STRIP -->
+<div class="urgencia-strip">
+  🔴 ¿Urgencia? Te atendemos hoy mismo.
+  <a href="https://wa.me/5491124944735?text=Tengo%20una%20urgencia%2C%20necesito%20un%20t%C3%A9cnico%20urgente." target="_blank" rel="noopener">Escribir ahora →</a>
 </div>
-</a>
 
-<!-- <a href="heladerascomerciales.html" class="service-link"> -->
-<div class="service-box freezers">
-<h3>Electricidad Industrial</h3>
-<p>Electricidad industrial: montaje e instalación de circuitos eléctricos, armado de tableros de potencia, automatizaciones, reparación y mantenimiento eléctrico.</p>
-</div>
-</a>
-</div>
+<!-- SERVICIOS -->
+<section class="servicios">
+  <div class="container">
+    <div class="section-label">Lo que hacemos</div>
+    <h2 class="section-title">Nuestros servicios</h2>
+    <p class="section-sub">Soluciones técnicas para el hogar, comercio e industria.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Instalación de Aire</h3>
+        <p>Instalamos equipos split y multisplit de todas las marcas, con cañería prolija y habilitación incluida.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Reparación de Equipos</h3>
+        <p>Diagnóstico preciso y reparación de aires, heladeras y lavarropas de cualquier marca.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Limpieza profunda y revisión de filtros, gas y circuito eléctrico para alargar la vida de tu equipo.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="6" r="3"/></svg>
+        </div>
+        <h3>Carga de Gas</h3>
+        <p>Recarga de gas refrigerante con equipos certificados. Detectamos pérdidas y sellamos el circuito.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14"/></svg>
+        </div>
+        <h3>Heladeras y Freezers</h3>
+        <p>Servicio técnico para heladeras familiares y comerciales. Cámaras frigoríficas industriales.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3>Service Lavarropas</h3>
+        <p>Reparación de lavarropas automáticos y semi. Cambio de repuestos con garantía.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Electricidad</h3>
+        <p>Instalaciones eléctricas domiciliarias e industriales. Tableros, bocas y puesta a tierra.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Hogar y Construcción</h3>
+        <p>Servicios integrales para obras en construcción y reformas. Asesoramos sin cargo.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Cámaras Frigoríficas</h3>
+        <p>Instalación, mantenimiento y reparación de cámaras frigoríficas para locales y depósitos.</p>
+      </div>
+
+    </div>
+
+    <!-- URGENCIA CARD -->
+    <div class="urgencia-card">
+      <div class="urg-icon">⚡</div>
+      <p><strong>¿Se te rompió algo?</strong> No esperes. Te mandamos un técnico hoy mismo. Urgencias disponibles todos los días.</p>
+    </div>
+
+    <div class="servicios-cta">
+      <a href="https://wa.me/5491124944735?text=Hola!%20Quiero%20consultar%20por%20un%20servicio." class="btn-wa" target="_blank" rel="noopener">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
 </section>
 
-<section id="contacto">
-<h2 style="text-align: center;">Contacto</h2>
-<div class="contact-info">
-<p>📞 <strong>Teléfono:</strong> 011 2494-4735</p>
-<p>✉️ <strong>Email:</strong> gstec.refrigeracion@gmail</p>
-<p>📍 <strong>Zona de Cobertura:</strong> CABA y GBA</p>
-
-<div class="social-buttons-container">
-<a href="https://wa.me/+5491124944735?text=Hola%20estoy%20interesado%20en%20sus%20servicios%20de%20refrigeración." class="social-button" target="_blank">
-<img src="Imagen/WhatsApp_icon.png" alt="WhatsApp">
-</a>
-<a href="https://www.instagram.com/gusti_tec/" class="social-button" target="_blank">
-<img src="Imagen/Logo Instagram.jpg" alt="Instagram">
-</a>
-<a href="https://www.facebook.com/profile.php?id=61575362645364&ref=pl_edit_xav_ig_profile_page_web" class="social-button" target="_blank">
-<img src="Imagen/Logo de facebook.avif" alt="Facebook">
-</a>
-</div>
-</div>
+<!-- CONFIANZA -->
+<section class="confianza">
+  <div class="container">
+    <div class="section-label" style="color:var(--cyan)">Por qué elegirnos</div>
+    <h2 class="section-title">Más de 10 años trabajando<br>en el Gran Buenos Aires</h2>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <span class="trust-icon">🏆</span>
+        <h3>+10 Años</h3>
+        <p>Experiencia comprobada en refrigeración, climatización y electricidad.</p>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">⚡</span>
+        <h3>Mismo día</h3>
+        <p>Atención rápida. En la mayoría de los casos vamos el mismo día que consultás.</p>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">🔒</span>
+        <h3>Garantía</h3>
+        <p>Garantizamos todos los trabajos realizados. Materiales y mano de obra.</p>
+      </div>
+      <div class="trust-card">
+        <span class="trust-icon">🚨</span>
+        <h3>Urgencias</h3>
+        <p>Servicio de urgencias disponible. No te quedás sin técnico cuando más lo necesitás.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="metodos-pago">
-<h2 style="text-align: center;">Medios de Pago</h2>
-<div class="metodos-pago-container">
-<img src="Imagen/Visa.jpg" alt="Logo Visa">
-<img src="Imagen/Mastercard.jpg" alt="Logo Mastercard">
-<img src="Imagen/Mercado Pago.png" alt="Logo Mercado Pago">
-<img src="Imagen/Pago efectivo.jpg" alt="Logo Efectivo">
-</div>
-</section>
-</div>
-</main>
+<!-- GALERÍA -->
+<section class="galeria">
+  <div class="container">
+    <div class="section-label">Trabajos realizados</div>
+    <h2 class="section-title">Así trabajamos</h2>
+    <p class="section-sub">Calidad y prolijidad en cada instalación y reparación.</p>
 
+    <div class="gallery-grid">
+      <!-- FOTO 4: Instalación prolija de split -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Split instalado</span>
+        </div>
+      </div>
+      <!-- FOTO 5: Técnico en trabajo eléctrico -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Trabajo eléctrico</span>
+        </div>
+      </div>
+      <!-- FOTO 6: Unidad exterior bien colocada -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Unidad exterior</span>
+        </div>
+      </div>
+      <!-- FOTO 7: Trabajo comercial / cámara frigorífica -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Cámara frigorífica / comercio</span>
+        </div>
+      </div>
+      <!-- FOTO 8: Técnico con herramientas -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Técnico con herramientas</span>
+        </div>
+      </div>
+      <!-- FOTO 9: Resultado final de reparación -->
+      <div class="gallery-item">
+        <div class="img-placeholder" style="height:220px">
+          <svg width="28" height="28" fill="none" stroke="#555" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>📸 Heladera reparada</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="servicios-cta" style="margin-top:36px">
+      <a href="https://wa.me/5491124944735?text=Hola!%20Vi%20sus%20trabajos%20y%20quiero%20pedir%20un%20presupuesto." class="btn-wa" target="_blank" rel="noopener">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedí tu presupuesto
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ZONAS -->
+<section class="zonas">
+  <div class="container">
+    <div class="section-label" style="color:var(--cyan)">Cobertura</div>
+    <h2 class="section-title">¿Dónde trabajamos?</h2>
+    <p class="section-sub" style="color:var(--gray3)">Cubrimos Gran Buenos Aires y toda la Ciudad Autónoma.</p>
+
+    <div class="zonas-grid">
+      <div class="zona-card">
+        <h4>Zona Sur</h4>
+        <ul>
+          <li>Lomas de Zamora</li>
+          <li>Banfield</li>
+          <li>Lanús</li>
+        </ul>
+      </div>
+      <div class="zona-card">
+        <h4>Zona Oeste</h4>
+        <ul>
+          <li>Lomas del Mirador</li>
+          <li>Villa Celina</li>
+          <li>Ciudadela</li>
+          <li>Ramos Mejía</li>
+          <li>San Justo</li>
+        </ul>
+      </div>
+      <div class="zona-card">
+        <h4>CABA</h4>
+        <ul>
+          <li>Lugano · Liniers</li>
+          <li>Caballito · Flores</li>
+          <li>Recoleta · Núñez</li>
+          <li>Barracas</li>
+          <li>Todo CABA</li>
+        </ul>
+      </div>
+      <div class="zona-card">
+        <h4>Zona Norte</h4>
+        <ul>
+          <li>San Isidro</li>
+          <li>Vicente López</li>
+          <li>Olivos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:32px">
+      <a href="https://wa.me/5491124944735?text=Hola!%20Quiero%20saber%20si%20cubren%20mi%20zona." class="btn-wa" target="_blank" rel="noopener">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar cobertura
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">+10</div>
+    <div class="stat-label">Años de experiencia</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">9</div>
+    <div class="stat-label">Servicios disponibles</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Zonas de cobertura</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">24h</div>
+    <div class="stat-label">Urgencias</div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Necesitás un<br><span>técnico hoy?</span></h2>
+    <p>Escribinos por WhatsApp y coordinamos en minutos.<br>Sin esperas, sin vueltas.</p>
+    <a href="https://wa.me/5491124944735?text=Hola!%20Necesito%20un%20servicio%20t%C3%A9cnico." class="btn-wa-big" target="_blank" rel="noopener">
+      <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solicitar servicio ahora
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<div class="container">
-<p>&copy; 2025 GSTec. Todos los derechos reservados.</p>
-</div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">GS<span style="color:var(--cyan)">Tec</span></a>
+      <p>Servicio técnico en refrigeración, climatización y electricidad. Más de 10 años de experiencia en el Gran Buenos Aires y CABA.</p>
+    </div>
+    <div class="footer-contact">
+      <p style="color:var(--gray2);font-weight:600;margin-bottom:12px">Contacto</p>
+      <a href="https://wa.me/5491124944735" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="#25D366" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +54 9 11 2494 4735
+      </a>
+      <a href="https://wa.me/5491124944735" target="_blank" rel="noopener" style="color:var(--gray3);font-size:13px;">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Atención de lunes a sábado · Urgencias todos los días
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 GSTec Refrigeración · Zona Sur, Oeste, CABA y Norte · Gran Buenos Aires, Argentina
+  </div>
 </footer>
 
-<a href="https://wa.me/+5491124944735?text=Hola%20estoy%20interesado%20en%20sus%20servicios%20de%20refrigeración." class="whatsapp-flotante" target="_blank">
-<img src="Imagen/WhatsApp_icon.png" alt="WhatsApp Flotante">
-</a>
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<div class="wa-float">
+  <div class="wa-float-bubble">¿Necesitás un técnico?</div>
+  <a href="https://wa.me/5491124944735?text=Hola!%20Vi%20su%20web%20y%20necesito%20un%20servicio%20t%C3%A9cnico." class="wa-float-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
 
 <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-if (menuToggle && navMenu) {
-menuToggle.addEventListener('click', () => {
-navMenu.classList.toggle('active');
-});
-}
+  // Ocultar burbuja del botón flotante después de 6 segundos
+  setTimeout(() => {
+    const bubble = document.querySelector('.wa-float-bubble');
+    if (bubble) {
+      bubble.style.transition = 'opacity .5s';
+      bubble.style.opacity = '0';
+      setTimeout(() => bubble.remove(), 500);
+    }
+  }, 6000);
 </script>
+
 </body>
 </html>
