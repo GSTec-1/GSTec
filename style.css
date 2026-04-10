@@ -368,6 +368,10 @@ footer {
         background-color: rgba(0,0,0,0.1);
         color: #fff;
     }
-}.img-placeholder {
+.img-placeholder {
+  border: none;
+  background: none;
+  padding: 0;
+}
     border: none !important;
 }
