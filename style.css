@@ -369,9 +369,15 @@ footer {
         color: #fff;
     }
 .img-placeholder {
-  border: none;
-  background: none;
-  padding: 0;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
 }
-    border: none !important;
+    .img-placeholder::before,
+.img-placeholder::after {
+  display: none !important;
+}
+
+.img-placeholder {
+  border: none !important;
 }
